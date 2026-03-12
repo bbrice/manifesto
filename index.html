@@ -38,7 +38,6 @@
     overflow-x: hidden;
   }
 
-  /* TOPOGRAPHY LINES */
   body::before {
     content: '';
     position: fixed;
@@ -51,7 +50,6 @@
     z-index: 0;
   }
 
-  /* SCAN LINE */
   body::after {
     content: '';
     position: fixed;
@@ -70,7 +68,6 @@
     100% { top: 100vh; opacity: 0; }
   }
 
-  /* LAYOUT */
   .container {
     position: relative;
     z-index: 2;
@@ -79,7 +76,6 @@
     padding: 0 10%;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -95,16 +91,16 @@
   .logo {
     font-family: 'Montserrat Subrayada', sans-serif;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     letter-spacing: -0.05em;
     color: var(--zinc);
     text-decoration: none;
     text-shadow: var(--zinc-glow);
   }
 
-  .nav-contact {
+  .nav-cta {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     color: var(--neon);
     text-shadow: var(--neon-glow);
     letter-spacing: 0.1em;
@@ -115,24 +111,24 @@
     transition: all 0.3s ease;
   }
 
-  .nav-contact:hover {
+  .nav-cta:hover {
     background: rgba(112,214,255,0.06);
     border-color: var(--neon);
     box-shadow: var(--neon-glow);
   }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
     align-items: flex-end;
     padding-top: 100px;
     padding-bottom: 100px;
+    border: none !important;
   }
 
   .hero-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 0.76rem;
     color: var(--infrared);
     text-shadow: var(--infrared-glow);
     letter-spacing: 0.2em;
@@ -178,13 +174,12 @@
 
   .hero-sub {
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: rgba(242,244,247,0.52);
     max-width: 440px;
     line-height: 1.9;
   }
 
-  /* SECTIONS */
   section {
     padding: 96px 0;
     border-top: 1px solid rgba(242,244,247,0.055);
@@ -192,7 +187,7 @@
 
   .section-num {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     color: var(--neon);
     text-shadow: var(--neon-glow);
     letter-spacing: 0.22em;
@@ -225,24 +220,21 @@
   h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 0.92rem;
-    letter-spacing: 0.01em;
+    font-size: 1rem;
     color: var(--zinc);
     margin-bottom: 8px;
   }
 
   p {
-    font-size: 0.93rem;
+    font-size: 1.05rem;
     color: rgba(242,244,247,0.68);
     margin-bottom: 20px;
     line-height: 1.9;
   }
 
   p:last-child { margin-bottom: 0; }
-
   strong { color: var(--zinc); font-weight: 600; }
 
-  /* ── INLINE LIST: used for S1 industries ── */
   .industry-list {
     margin-top: 44px;
     display: flex;
@@ -258,13 +250,11 @@
     border-bottom: 1px solid rgba(242,244,247,0.055);
   }
 
-  .industry-item:first-child {
-    border-top: 1px solid rgba(242,244,247,0.055);
-  }
+  .industry-item:first-child { border-top: 1px solid rgba(242,244,247,0.055); }
 
   .industry-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     color: var(--neon);
     text-shadow: var(--neon-glow);
     letter-spacing: 0.15em;
@@ -272,12 +262,11 @@
   }
 
   .industry-text {
-    font-size: 0.9rem;
+    font-size: 1.02rem;
     color: rgba(242,244,247,0.65);
-    line-height: 1.75;
+    line-height: 1.78;
   }
 
-  /* ── VERDICT ── */
   .verdict {
     margin-top: 52px;
     padding-left: 24px;
@@ -286,13 +275,12 @@
 
   .verdict p {
     color: var(--zinc);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 500;
     line-height: 1.7;
     margin: 0;
   }
 
-  /* ── S2: TWO CAMPS ── */
   .two-camps {
     margin-top: 48px;
     display: flex;
@@ -318,18 +306,16 @@
     flex-shrink: 0;
   }
 
-  .camp-title.fallen { color: rgba(242,244,247,0.5); }
-  .camp-title.fallen .camp-dot { background: rgba(242,244,247,0.3); }
+  .camp-title.fallen { color: var(--zinc); }
+  .camp-title.fallen .camp-dot { background: var(--zinc); opacity: 0.5; }
   .camp-title.predator { color: var(--infrared); text-shadow: var(--infrared-glow); }
   .camp-title.predator .camp-dot { background: var(--infrared); box-shadow: var(--infrared-glow); }
 
-  /* Predator sub-list */
   .predator-list {
     list-style: none;
     margin-top: 24px;
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
   .predator-list li {
@@ -338,28 +324,26 @@
     gap: 16px;
     padding: 16px 0;
     border-bottom: 1px solid rgba(242,244,247,0.045);
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: rgba(242,244,247,0.67);
-    line-height: 1.75;
+    line-height: 1.78;
     align-items: start;
   }
 
   .predator-list li:first-child { border-top: 1px solid rgba(242,244,247,0.045); }
 
   .predator-list li::before {
-    content: '→';
+    content: '\2192';
     color: var(--infrared);
     text-shadow: var(--infrared-glow);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     margin-top: 3px;
   }
 
-  /* ── S3: PILLARS as numbered prose ── */
   .pillar-list {
     margin-top: 48px;
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
   .pillar-item {
@@ -383,16 +367,15 @@
   }
 
   .pillar-body h3 {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--neon);
     text-shadow: var(--neon-glow);
     margin-bottom: 10px;
   }
 
-  .pillar-body p { margin: 0; font-size: 0.9rem; }
+  .pillar-body p { margin: 0; font-size: 1rem; }
 
-  /* ── S4: CASE STUDY — box kept, makes sense ── */
   .case-box {
     margin-top: 44px;
     border: 1px solid rgba(112,214,255,0.14);
@@ -407,7 +390,7 @@
     top: -10px;
     left: 32px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.57rem;
+    font-size: 0.68rem;
     letter-spacing: 0.2em;
     background: var(--noir);
     padding: 0 12px;
@@ -418,7 +401,6 @@
   .stats-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
     margin-top: 36px;
     padding-top: 32px;
     border-top: 1px solid rgba(242,244,247,0.06);
@@ -439,18 +421,24 @@
 
   .stat-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    color: rgba(242,244,247,0.4);
-    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    color: rgba(242,244,247,0.45);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
   }
 
-  /* ── S5: EXECUTIONS — plain list ── */
-  .exec-list {
-    margin-top: 36px;
-    display: flex;
-    flex-direction: column;
+  .exec-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--infrared);
+    text-shadow: var(--infrared-glow);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    margin-top: 52px;
   }
+
+  .exec-list { display: flex; flex-direction: column; }
 
   .exec-item {
     display: grid;
@@ -469,17 +457,12 @@
     background: var(--infrared);
     box-shadow: var(--infrared-glow);
     border-radius: 50%;
-    margin-top: 9px;
+    margin-top: 10px;
     flex-shrink: 0;
   }
 
-  .exec-text {
-    font-size: 0.9rem;
-    color: rgba(242,244,247,0.67);
-    line-height: 1.78;
-  }
+  .exec-text { font-size: 1rem; color: rgba(242,244,247,0.67); line-height: 1.78; }
 
-  /* ── PHASES — two boxes, kept: distinct offers ── */
   .phases {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -487,14 +470,11 @@
     margin-top: 52px;
   }
 
-  .phase {
-    border: 1px solid rgba(242,244,247,0.07);
-    padding: 36px 32px;
-  }
+  .phase { border: 1px solid rgba(242,244,247,0.07); padding: 36px 32px; }
 
   .phase-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     color: var(--infrared);
     text-shadow: var(--infrared-glow);
     letter-spacing: 0.2em;
@@ -502,21 +482,16 @@
     margin-bottom: 14px;
   }
 
-  .phase h3 {
-    font-size: 1.1rem;
-    font-weight: 800;
-    margin-bottom: 6px;
-  }
+  .phase h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
 
   .phase-sub {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.72rem;
     color: rgba(242,244,247,0.32);
     margin-bottom: 16px;
     letter-spacing: 0.05em;
   }
 
-  /* ── CTA ── */
   .cta-wrap {
     padding: 120px 0 140px;
     position: relative;
@@ -525,11 +500,9 @@
   .cta-wrap::before {
     content: '';
     position: absolute;
-    left: -10%;
-    top: 50%;
+    left: -10%; top: 50%;
     transform: translateY(-50%);
-    width: 400px;
-    height: 400px;
+    width: 400px; height: 400px;
     background: radial-gradient(ellipse, rgba(255,77,0,0.045) 0%, transparent 68%);
     pointer-events: none;
   }
@@ -544,13 +517,10 @@
     margin-bottom: 20px;
   }
 
-  .cta-title span {
-    color: var(--infrared);
-    text-shadow: var(--infrared-glow);
-  }
+  .cta-title span { color: var(--infrared); text-shadow: var(--infrared-glow); }
 
   .cta-sub {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: rgba(242,244,247,0.44);
     max-width: 360px;
     margin-bottom: 48px;
@@ -565,8 +535,8 @@
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     text-decoration: none;
     padding: 18px 44px;
@@ -580,7 +550,6 @@
     transform: translateY(-2px);
   }
 
-  /* ── FOOTER ── */
   footer {
     border-top: 1px solid rgba(242,244,247,0.055);
     padding: 48px 10%;
@@ -595,7 +564,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: -0.05em;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: rgba(242,244,247,0.28);
   }
 
@@ -604,51 +573,53 @@
   .footer-name {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     color: var(--zinc);
     margin-bottom: 4px;
   }
 
   .footer-role {
-    font-size: 0.72rem;
-    font-weight: 400;
+    font-size: 0.8rem;
     color: rgba(242,244,247,0.35);
     margin-bottom: 10px;
   }
 
   .footer-email {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.67rem;
+    font-size: 0.75rem;
     color: var(--neon);
     text-shadow: var(--neon-glow);
     text-decoration: none;
     letter-spacing: 0.04em;
-    transition: opacity 0.2s;
   }
 
   .footer-email:hover { opacity: 0.7; }
 
-  /* ── REVEAL ── */
+  /* REVEAL — fully visible by default. JS adds animation as enhancement only. */
   .reveal {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.65s ease, transform 0.65s ease;
   }
 
-  .reveal.visible {
+  body.js-ready .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  body.js-ready .reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 680px) {
     nav { padding: 18px 6%; }
     .container { padding: 0 6%; }
     .industry-item { grid-template-columns: 1fr; gap: 8px; }
     .pillar-item { grid-template-columns: 40px 1fr; gap: 16px; }
     .phases { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: 1fr; gap: 24px; }
-    .stat + .stat { border-left: none; border-top: 1px solid rgba(242,244,247,0.06); padding-top: 24px; }
+    .stats-row { grid-template-columns: 1fr; }
+    .stat + .stat { border-left: none; border-top: 1px solid rgba(242,244,247,0.06); padding-top: 24px; margin-top: 24px; }
     footer { padding: 40px 6%; flex-direction: column; gap: 24px; text-align: center; }
     .footer-right { text-align: center; }
   }
@@ -656,17 +627,15 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="logo">GROUND</a>
-  <a href="mailto:brice@groundadvisory.com" class="nav-contact">Contact →</a>
+  <a href="#" class="nav-cta js-mailto">Contact &#8594;</a>
 </nav>
 
-<!-- HERO -->
 <div class="container">
-  <section class="hero" style="border:none;">
+  <section class="hero">
     <div style="width:100%;" class="reveal">
-      <div class="hero-tag">Manifesto — Strategic Operating Partner</div>
+      <div class="hero-tag">Manifesto &#8212; Strategic Operating Partner</div>
       <h1>The<br><em>Predator</em><br>Playbook.</h1>
       <div class="hero-divider"></div>
       <p class="hero-sub">The war is no longer won on metal. It is won on the intelligence layer and user adoption.</p>
@@ -674,7 +643,6 @@
   </section>
 </div>
 
-<!-- S1 -->
 <div class="container">
   <section>
     <div class="reveal">
@@ -683,7 +651,6 @@
       <p>The paradigm has shifted. For decades, hardware engineering superiority was enough to build a monopoly. Today, the hardware world has been hacked by the speed of software. The war is no longer won on metal; it is won on the intelligence layer and user adoption.</p>
       <p>This brutal reality is striking all pillars of European HardTech simultaneously:</p>
     </div>
-
     <div class="industry-list reveal">
       <div class="industry-item">
         <span class="industry-label">Energy</span>
@@ -695,21 +662,19 @@
       </div>
       <div class="industry-item">
         <span class="industry-label">Robotics</span>
-        <span class="industry-text">Brilliant engineering teams get trapped in the "custom-project" loop, selling bespoke R&amp;D projects instead of a standardized, scalable product.</span>
+        <span class="industry-text">Brilliant engineering teams get trapped in the &#8220;custom-project&#8221; loop, selling bespoke R&amp;D projects instead of a standardized, scalable product.</span>
       </div>
       <div class="industry-item">
         <span class="industry-label">New Space</span>
         <span class="industry-text">Hardware scale-ups must pivot to Platform-as-a-Service before their stellar-patented thrust or OTV technology becomes a commodity.</span>
       </div>
     </div>
-
     <div class="verdict reveal">
       <p><strong>The conclusion is absolute:</strong> If your strategic roadmap is still dictated by the R&amp;D cycles of your engineers, your margins are already bleeding.</p>
     </div>
   </section>
 </div>
 
-<!-- S2 -->
 <div class="container">
   <section>
     <div class="reveal">
@@ -717,23 +682,21 @@
       <h2>Fallen Unicorns<br>vs. Predators</h2>
       <p>As the market accelerates, the industry is brutally splitting in two.</p>
     </div>
-
     <div class="two-camps reveal">
       <div>
         <div class="camp-title fallen">
           <span class="camp-dot"></span>
-          The "Fallen Unicorns"
+          The &#8220;Fallen Unicorns&#8221;
         </div>
         <p>Look at fallen giants like Tritium or Arrival. They had the best EV and EV charging technologies for years, yet they collapsed. <strong>They tackled hyper-growth using the same decision-making process that got them off the ground.</strong></p>
         <p>They fell into the <strong>Project-Trap</strong> (custom engineering for every major account) and the <strong>Headcount-Trap</strong> (throwing armies of operations staff to solve platform reliability issues). They suffocated under their own complexity.</p>
       </div>
-
       <div>
         <div class="camp-title predator">
           <span class="camp-dot"></span>
           The Predators
         </div>
-        <p>Predators don't win through better hardware. They win through an entirely different Operating System:</p>
+        <p>Predators don&#8217;t win through better hardware. They win through an entirely different Operating System:</p>
         <ul class="predator-list">
           <li><div><strong>Velocity via Feedback Loops:</strong> They constantly create ultra-short feedback loops, creating unmatched agility and generating Net Recurring Revenue.</div></li>
           <li><div><strong>Vertical-integration Moat:</strong> By vertically integrating, they use their hardware to capture exclusive operational and usage data. The physical asset becomes an unassailable usage moat that software-only competitors can never replicate.</div></li>
@@ -744,7 +707,6 @@
   </section>
 </div>
 
-<!-- S3 -->
 <div class="container">
   <section>
     <div class="reveal">
@@ -752,7 +714,6 @@
       <h2>The HardTech<br>True Scale</h2>
       <p>The goal is to build an execution engine that creates a mathematical advantage. When a HardTech scale-up successfully transitions to a modern Operating Model, it unlocks three pillars:</p>
     </div>
-
     <div class="pillar-list reveal">
       <div class="pillar-item">
         <div class="pillar-n">01</div>
@@ -779,38 +740,34 @@
   </section>
 </div>
 
-<!-- S4 -->
 <div class="container">
   <section>
     <div class="reveal">
       <div class="section-num">04</div>
       <h2>Anatomy of a Predator:<br><span style="color:var(--neon);text-shadow:var(--neon-glow);">Electra</span></h2>
-      <p>Achieving this operational asymmetry requires a surgical execution engine. I didn't read this playbook in a book; I forged it on the front lines.</p>
+      <p>Achieving this operational asymmetry requires a surgical execution engine. I didn&#8217;t read this playbook in a book; I forged it on the front lines.</p>
       <p>In 2021, the European EV charging market was asleep with legacy players. We built Electra to be the anomaly. By focusing on user experience and operational excellence instead of hardware-only, we became the predator. As Chief Product Officer, my mission was to <strong>build the machine that builds the product.</strong></p>
     </div>
-
-    <!-- Box kept: data callout deserves visual isolation -->
     <div class="case-box reveal">
-      <p>We deployed 3x faster than the market, crushed legacy dinosaurs on strategic tenders, and secured <strong>€1 Billion in funding in 4 years</strong>. We were valued not as hardware installers, but as a technological platform capable of compounding scale.</p>
+      <p>We deployed 3x faster than the market, crushed legacy dinosaurs on strategic tenders, and secured <strong>&#8364;1 Billion in funding in 4 years</strong>. We were valued not as hardware installers, but as a technological platform capable of compounding scale.</p>
       <div class="stats-row">
         <div class="stat">
-          <div class="stat-val">3×</div>
-          <div class="stat-label">Faster than market</div>
+          <div class="stat-val">3&#215;</div>
+          <div class="stat-label">Faster deployment than market</div>
         </div>
         <div class="stat">
-          <div class="stat-val">€1B</div>
+          <div class="stat-val">&#8364;1B</div>
           <div class="stat-label">Secured in 4 years</div>
         </div>
         <div class="stat">
-          <div class="stat-val">4Y</div>
-          <div class="stat-label">Anomaly to predator</div>
+          <div class="stat-val">#1</div>
+          <div class="stat-label">On every strategic tender vs incumbents</div>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- S5 -->
 <div class="container">
   <section>
     <div class="reveal">
@@ -818,9 +775,8 @@
       <h2>The GROUND<br>Operating System</h2>
       <p>The EV industry hit the commoditization wall two years before anyone else. <strong>I have already seen this movie</strong>, and I know exactly how it ends. Today, I install this exact execution system (the <em>GROUND.OS</em>) in E-Mobility, Energy, New Space and Robotics scale-ups that are crashing into the wall of industrialization.</p>
     </div>
-
     <div class="reveal">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--infrared);text-shadow:var(--infrared-glow);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:4px;margin-top:48px;">Recent 2026 Executions</div>
+      <div class="exec-label">Recent 2026 Executions</div>
       <div class="exec-list">
         <div class="exec-item">
           <div class="exec-dot"></div>
@@ -836,13 +792,10 @@
         </div>
       </div>
     </div>
-
     <div class="reveal" style="margin-top:60px;">
       <p><strong>Stop Guessing. Start Scaling.</strong> When the market is moving faster than your internal teams and you need to demonstrate scalability before your next funding round, you cannot afford a 6-month consulting mission. You need a system.</p>
       <p>I operate in two phases:</p>
     </div>
-
-    <!-- Boxes kept: two distinct offers, need visual separation -->
     <div class="phases reveal">
       <div class="phase">
         <div class="phase-label">Phase 01</div>
@@ -860,40 +813,53 @@
   </section>
 </div>
 
-<!-- CTA -->
 <div class="container">
   <div class="cta-wrap reveal">
-    <h2 class="cta-title">Let's map the friction.<br><span>Let's fix the machine.</span></h2>
+    <h2 class="cta-title">Let&#8217;s map the friction.<br><span>Let&#8217;s fix the machine.</span></h2>
     <p class="cta-sub">When the market is moving faster than your internal teams, you cannot afford to wait.</p>
-    <a href="mailto:brice@groundadvisory.com" class="cta-btn">Start the Diagnostic &nbsp;→</a>
+    <a href="#" class="cta-btn js-mailto">Become a Predator &#8594;</a>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">GROUND</div>
   <div class="footer-right">
     <div class="footer-name">BRICE BOURREAU</div>
     <div class="footer-role">Strategic Operating Partner for HardTech Scale-ups</div>
-    <a href="mailto:brice@groundadvisory.com" class="footer-email">brice@groundadvisory.com</a>
+    <a href="#" class="footer-email js-mailto">brice&#64;groundadvisory.com</a>
   </div>
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+(function () {
+  // Build mailto via JS — prevents Cloudflare obfuscation at serve time
+  var em = 'brice' + '\u0040' + 'groundadvisory.com';
+  document.querySelectorAll('.js-mailto').forEach(function (el) {
+    el.href = 'mailto:' + em;
+  });
+
+  // Scroll reveal — progressive enhancement only
+  // Content is visible without JS; JS adds the fade-in animation
+  document.body.classList.add('js-ready');
+
+  var items = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), 60);
+        setTimeout(function () { e.target.classList.add('visible'); }, 60);
         io.unobserve(e.target);
       }
     });
   }, { threshold: 0.07 });
-  reveals.forEach(el => io.observe(el));
-  setTimeout(() => {
-    const hero = document.querySelector('.hero .reveal');
+
+  items.forEach(function (el) { io.observe(el); });
+
+  // Hero is always above fold — trigger immediately
+  setTimeout(function () {
+    var hero = document.querySelector('.hero .reveal');
     if (hero) hero.classList.add('visible');
-  }, 150);
+  }, 100);
+}());
 </script>
 
 </body>
