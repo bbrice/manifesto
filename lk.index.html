@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vuja2djovz");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Predator Playbook — GROUND</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --noir: #0D0D0D;
+    --zinc: #F2F4F7;
+    --neon: #70D6FF;
+    --infrared: #FF4D00;
+    --neon-glow: 0 0 5px rgba(112,214,255,0.5), 0 0 12px rgba(112,214,255,0.2);
+    --infrared-glow: 0 0 8px rgba(255,77,0,0.6), 0 0 20px rgba(255,77,0,0.3);
+    --zinc-glow: 0 0 2px rgba(242,244,247,0.3);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--noir);
+    color: var(--zinc);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 59px,
+      rgba(112,214,255,0.04) 60px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(112,214,255,0.1), transparent);
+    animation: scan 10s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes scan {
+    0%   { top: -2px; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { top: 100vh; opacity: 0; }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 10%;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(13,13,13,0.97) 0%, transparent 100%);
+    backdrop-filter: blur(6px);
+  }
+
+  .logo {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.05em;
+    color: var(--zinc);
+    text-decoration: none;
+    text-shadow: var(--zinc-glow);
+  }
+
+  .nav-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--neon);
+    text-shadow: var(--neon-glow);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid rgba(112,214,255,0.25);
+    padding: 8px 18px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta:hover {
+    background: rgba(112,214,255,0.06);
+    border-color: var(--neon);
+    box-shadow: var(--neon-glow);
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border: none !important;
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--infrared);
+    text-shadow: var(--infrared-glow);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--infrared);
+    box-shadow: var(--infrared-glow);
+  }
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--zinc);
+    text-shadow: var(--zinc-glow);
+    margin-bottom: 60px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--neon);
+    text-shadow: var(--neon-glow);
+  }
+
+  .hero-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(112,214,255,0.4), transparent);
+    margin-bottom: 36px;
+  }
+
+  .hero-sub {
+    font-weight: 300;
+    font-size: 1.05rem;
+    color: rgba(242,244,247,0.52);
+    max-width: 440px;
+    line-height: 1.9;
+  }
+
+  section {
+    padding: 96px 0;
+    border-top: 1px solid rgba(242,244,247,0.055);
+  }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--neon);
+    text-shadow: var(--neon-glow);
+    letter-spacing: 0.22em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.75;
+  }
+
+  .section-num::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--neon);
+    opacity: 0.6;
+  }
+
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--zinc);
+    text-shadow: var(--zinc-glow);
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--zinc);
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: rgba(242,244,247,0.68);
+    margin-bottom: 20px;
+    line-height: 1.9;
+  }
+
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--zinc); font-weight: 600; }
+
+  .industry-list {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .industry-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 32px;
+    align-items: baseline;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(242,244,247,0.055);
+  }
+
+  .industry-item:first-child { border-top: 1px solid rgba(242,244,247,0.055); }
+
+  .industry-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--neon);
+    text-shadow: var(--neon-glow);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .industry-text {
+    font-size: 1.02rem;
+    color: rgba(242,244,247,0.65);
+    line-height: 1.78;
+  }
+
+  .verdict {
+    margin-top: 52px;
+    padding-left: 24px;
+    border-left: 2px solid var(--infrared);
+  }
+
+  .verdict p {
+    color: var(--zinc);
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .two-camps {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .camp-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .camp-title .camp-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .camp-title.fallen { color: var(--zinc); }
+  .camp-title.fallen .camp-dot { background: var(--zinc); opacity: 0.5; }
+  .camp-title.predator { color: var(--infrared); text-shadow: var(--infrared-glow); }
+  .camp-title.predator .camp-dot { background: var(--infrared); box-shadow: var(--infrared-glow); }
+
+  .predator-list {
+    list-style: none;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .predator-list li {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(242,244,247,0.045);
+    font-size: 1rem;
+    color: rgba(242,244,247,0.67);
+    line-height: 1.78;
+    align-items: start;
+  }
+
+  .predator-list li:first-child { border-top: 1px solid rgba(242,244,247,0.045); }
+
+  .predator-list li::before {
+    content: '\2192';
+    color: var(--infrared);
+    text-shadow: var(--infrared-glow);
+    font-size: 0.8rem;
+    margin-top: 3px;
+  }
+
+  .pillar-list {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pillar-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 28px;
+    padding: 36px 0;
+    border-bottom: 1px solid rgba(242,244,247,0.055);
+    align-items: start;
+  }
+
+  .pillar-item:first-child { border-top: 1px solid rgba(242,244,247,0.055); }
+
+  .pillar-n {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgba(112,214,255,0.15);
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .pillar-body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--neon);
+    text-shadow: var(--neon-glow);
+    margin-bottom: 10px;
+  }
+
+  .pillar-body p { margin: 0; font-size: 1rem; }
+
+  .case-box {
+    margin-top: 44px;
+    border: 1px solid rgba(112,214,255,0.14);
+    background: rgba(112,214,255,0.016);
+    padding: 40px;
+    position: relative;
+  }
+
+  .case-box::before {
+    content: 'CASE STUDY // ELECTRA';
+    position: absolute;
+    top: -10px;
+    left: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    background: var(--noir);
+    padding: 0 12px;
+    color: var(--neon);
+    text-shadow: var(--neon-glow);
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(242,244,247,0.06);
+  }
+
+  .stat { text-align: center; padding: 0 16px; }
+  .stat + .stat { border-left: 1px solid rgba(242,244,247,0.06); }
+
+  .stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--infrared);
+    text-shadow: var(--infrared-glow);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(242,244,247,0.45);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .exec-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--infrared);
+    text-shadow: var(--infrared-glow);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    margin-top: 52px;
+  }
+
+  .exec-list { display: flex; flex-direction: column; }
+
+  .exec-item {
+    display: grid;
+    grid-template-columns: 8px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(242,244,247,0.05);
+    align-items: start;
+  }
+
+  .exec-item:first-child { border-top: 1px solid rgba(242,244,247,0.05); }
+
+  .exec-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--infrared);
+    box-shadow: var(--infrared-glow);
+    border-radius: 50%;
+    margin-top: 10px;
+    flex-shrink: 0;
+  }
+
+  .exec-text { font-size: 1rem; color: rgba(242,244,247,0.67); line-height: 1.78; }
+
+  .phases {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 52px;
+  }
+
+  .phase { border: 1px solid rgba(242,244,247,0.07); padding: 36px 32px; }
+
+  .phase-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--infrared);
+    text-shadow: var(--infrared-glow);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .phase h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
+
+  .phase-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: rgba(242,244,247,0.32);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-wrap {
+    padding: 120px 0 140px;
+    position: relative;
+  }
+
+  .cta-wrap::before {
+    content: '';
+    position: absolute;
+    left: -10%; top: 50%;
+    transform: translateY(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(ellipse, rgba(255,77,0,0.045) 0%, transparent 68%);
+    pointer-events: none;
+  }
+
+  .cta-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    color: var(--zinc);
+    margin-bottom: 20px;
+  }
+
+  .cta-title span { color: var(--infrared); text-shadow: var(--infrared-glow); }
+
+  .cta-sub {
+    font-size: 1rem;
+    color: rgba(242,244,247,0.44);
+    max-width: 360px;
+    margin-bottom: 48px;
+    line-height: 1.85;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--infrared);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 44px;
+    box-shadow: var(--infrared-glow);
+    transition: all 0.3s ease;
+  }
+
+  .cta-btn:hover {
+    background: #ff5c14;
+    box-shadow: 0 0 22px rgba(255,77,0,0.6), 0 0 50px rgba(255,77,0,0.22);
+    transform: translateY(-2px);
+  }
+
+  footer {
+    border-top: 1px solid rgba(242,244,247,0.055);
+    padding: 48px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    font-size: 0.9rem;
+    color: rgba(242,244,247,0.28);
+  }
+
+  .footer-right { text-align: right; }
+
+  .footer-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--zinc);
+    margin-bottom: 4px;
+  }
+
+  .footer-role {
+    font-size: 0.8rem;
+    color: rgba(242,244,247,0.35);
+    margin-bottom: 10px;
+  }
+
+  .footer-email {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--neon);
+    text-shadow: var(--neon-glow);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-email:hover { opacity: 0.7; }
+
+  /* REVEAL — fully visible by default. JS adds animation as enhancement only. */
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  body.js-ready .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  body.js-ready .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 680px) {
+    nav { padding: 18px 6%; }
+    .container { padding: 0 6%; }
+    .industry-item { grid-template-columns: 1fr; gap: 8px; }
+    .pillar-item { grid-template-columns: 40px 1fr; gap: 16px; }
+    .phases { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr; }
+    .stat + .stat { border-left: none; border-top: 1px solid rgba(242,244,247,0.06); padding-top: 24px; margin-top: 24px; }
+    footer { padding: 40px 6%; flex-direction: column; gap: 24px; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">GROUND</a>
+  <a href="#" class="nav-cta js-mailto">Contact &#8594;</a>
+</nav>
+
+<div class="container">
+  <section class="hero">
+    <div style="width:100%;" class="reveal">
+      <div class="hero-tag">Manifesto &#8212; Strategic Operating Partner</div>
+      <h1>The<br><em>Predator</em><br>Playbook.</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">The war is no longer won on metal. It is won on the intelligence layer and user adoption.</p>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section>
+    <div class="reveal">
+      <div class="section-num">01</div>
+      <h2>The End of the<br>Hardware Exception</h2>
+      <p>The paradigm has shifted. For decades, hardware engineering superiority was enough to build a monopoly. Today, the hardware world has been hacked by the speed of software. The war is no longer won on metal; it is won on the intelligence layer and user adoption.</p>
+      <p>This brutal reality is striking all pillars of European HardTech simultaneously:</p>
+    </div>
+    <div class="industry-list reveal">
+      <div class="industry-item">
+        <span class="industry-label">Energy</span>
+        <span class="industry-text">Stationary batteries are standardized; the margin migrated from hardware to service, and today from service to the orchestration OS.</span>
+      </div>
+      <div class="industry-item">
+        <span class="industry-label">Mobility</span>
+        <span class="industry-text">Asian manufacturers are about to dominate the hardware-market; the only remaining moat is usage and software.</span>
+      </div>
+      <div class="industry-item">
+        <span class="industry-label">Robotics</span>
+        <span class="industry-text">Brilliant engineering teams get trapped in the &#8220;custom-project&#8221; loop, selling bespoke R&amp;D projects instead of a standardized, scalable product.</span>
+      </div>
+      <div class="industry-item">
+        <span class="industry-label">New Space</span>
+        <span class="industry-text">Hardware scale-ups must pivot to Platform-as-a-Service before their stellar-patented thrust or OTV technology becomes a commodity.</span>
+      </div>
+    </div>
+    <div class="verdict reveal">
+      <p><strong>The conclusion is absolute:</strong> If your strategic roadmap is still dictated by the R&amp;D cycles of your engineers, your margins are already bleeding.</p>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section>
+    <div class="reveal">
+      <div class="section-num">02</div>
+      <h2>Fallen Unicorns<br>vs. Predators</h2>
+      <p>As the market accelerates, the industry is brutally splitting in two.</p>
+    </div>
+    <div class="two-camps reveal">
+      <div>
+        <div class="camp-title fallen">
+          <span class="camp-dot"></span>
+          The &#8220;Fallen Unicorns&#8221;
+        </div>
+        <p>Look at fallen giants like Tritium or Arrival. They had the best EV and EV charging technologies for years, yet they collapsed. <strong>They tackled hyper-growth using the same decision-making process that got them off the ground.</strong></p>
+        <p>They fell into the <strong>Project-Trap</strong> (custom engineering for every major account) and the <strong>Headcount-Trap</strong> (throwing armies of operations staff to solve platform reliability issues). They suffocated under their own complexity.</p>
+      </div>
+      <div>
+        <div class="camp-title predator">
+          <span class="camp-dot"></span>
+          The Predators
+        </div>
+        <p>Predators don&#8217;t win through better hardware. They win through an entirely different Operating System:</p>
+        <ul class="predator-list">
+          <li><div><strong>Velocity via Feedback Loops:</strong> They constantly create ultra-short feedback loops, creating unmatched agility and generating Net Recurring Revenue.</div></li>
+          <li><div><strong>Vertical-integration Moat:</strong> By vertically integrating, they use their hardware to capture exclusive operational and usage data. The physical asset becomes an unassailable usage moat that software-only competitors can never replicate.</div></li>
+          <li><div><strong>Product-Market Alignment:</strong> Every development decision is ruthlessly aligned with what sells, deploys fast and captures market shares.</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section>
+    <div class="reveal">
+      <div class="section-num">03</div>
+      <h2>The HardTech<br>True Scale</h2>
+      <p>The goal is to build an execution engine that creates a mathematical advantage. When a HardTech scale-up successfully transitions to a modern Operating Model, it unlocks three pillars:</p>
+    </div>
+    <div class="pillar-list reveal">
+      <div class="pillar-item">
+        <div class="pillar-n">01</div>
+        <div class="pillar-body">
+          <h3>Compounding Velocity</h3>
+          <p>Iterating so fast that the market is forced to constantly adjust to your pace.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-n">02</div>
+        <div class="pillar-body">
+          <h3>The Margin Pivot</h3>
+          <p>Shifting from vulnerable <span style="font-family:'JetBrains Mono',monospace;color:rgba(242,244,247,0.5);">20%</span> hardware margins to defensible <span style="font-family:'JetBrains Mono',monospace;color:var(--neon);text-shadow:var(--neon-glow);">80%</span> software recurring margins.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-n">03</div>
+        <div class="pillar-body">
+          <h3>Explosive Revenue-per-Headcount</h3>
+          <p>Successfully decoupling top-line revenue growth from bottom-line staff growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section>
+    <div class="reveal">
+      <div class="section-num">04</div>
+      <h2>Anatomy of a Predator:<br><span style="color:var(--neon);text-shadow:var(--neon-glow);">Electra</span></h2>
+      <p>Achieving this operational asymmetry requires a surgical execution engine. I didn&#8217;t read this playbook in a book; I forged it on the front lines.</p>
+      <p>In 2021, the European EV charging market was asleep with legacy players. We built Electra to be the anomaly. By focusing on user experience and operational excellence instead of hardware-only, we became the predator. As Chief Product Officer, my mission was to <strong>build the machine that builds the product.</strong></p>
+    </div>
+    <div class="case-box reveal">
+      <p>We deployed 3x faster than the market, crushed legacy dinosaurs on strategic tenders, and secured <strong>&#8364;1 Billion in funding in 4 years</strong>. We were valued not as hardware installers, but as a technological platform capable of compounding scale.</p>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-val">3&#215;</div>
+          <div class="stat-label">Faster deployment than market</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">&#8364;1B</div>
+          <div class="stat-label">Secured in 4 years</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">#1</div>
+          <div class="stat-label">On every strategic tender vs incumbents</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section>
+    <div class="reveal">
+      <div class="section-num">05</div>
+      <h2>The GROUND<br>Operating System</h2>
+      <p>The EV industry hit the commoditization wall two years before anyone else. <strong>I have already seen this movie</strong>, and I know exactly how it ends. Today, I install this exact execution system (the <em>GROUND.OS</em>) in E-Mobility, Energy, New Space and Robotics scale-ups that are crashing into the wall of industrialization.</p>
+    </div>
+    <div class="reveal">
+      <div class="exec-label">Recent 2026 Executions</div>
+      <div class="exec-list">
+        <div class="exec-item">
+          <div class="exec-dot"></div>
+          <div class="exec-text"><strong>B2B Mobility SaaS:</strong> Installed a Product Operating Model to accelerate Time-to-Market 3x and secure seed funding.</div>
+        </div>
+        <div class="exec-item">
+          <div class="exec-dot"></div>
+          <div class="exec-text"><strong>EU Hardware Scale-up:</strong> Restructuring the GTM and Sales engines to secure their 2026 order intake and redesigning Ops processes for scale.</div>
+        </div>
+        <div class="exec-item">
+          <div class="exec-dot"></div>
+          <div class="exec-text"><strong>Major EU Manufacturer:</strong> Building a net-new platform monetization business line from the ground to counter Asian commoditization.</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:60px;">
+      <p><strong>Stop Guessing. Start Scaling.</strong> When the market is moving faster than your internal teams and you need to demonstrate scalability before your next funding round, you cannot afford a 6-month consulting mission. You need a system.</p>
+      <p>I operate in two phases:</p>
+    </div>
+    <div class="phases reveal">
+      <div class="phase">
+        <div class="phase-label">Phase 01</div>
+        <h3>GROUND.Truth</h3>
+        <div class="phase-sub">5-Day Diagnostic</div>
+        <p>A clinical assessment of your market reality and organizational truth. I pinpoint exactly where your engine is lacking velocity and deliver the 3 critical decisions to make today.</p>
+      </div>
+      <div class="phase" style="border-color:rgba(255,77,0,0.18);background:rgba(255,77,0,0.018);">
+        <div class="phase-label">Phase 02</div>
+        <h3>GROUND.Control</h3>
+        <div class="phase-sub">The System</div>
+        <p>Installing the execution engine to align your Strategy, Product, Sales and Operations.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <div class="cta-wrap reveal">
+    <h2 class="cta-title">Let&#8217;s map the friction.<br><span>Let&#8217;s fix the machine.</span></h2>
+    <p class="cta-sub">When the market is moving faster than your internal teams, you cannot afford to wait.</p>
+    <a href="#" class="cta-btn js-mailto">Start the Diagnostic &#8594;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">GROUND</div>
+  <div class="footer-right">
+    <div class="footer-name">BRICE BOURREAU</div>
+    <div class="footer-role">Strategic Operating Partner for HardTech Scale-ups</div>
+    <a href="#" class="footer-email js-mailto">brice&#64;groundadvisory.com</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Build mailto via JS — prevents Cloudflare obfuscation at serve time
+  var em = 'brice' + '\u0040' + 'groundadvisory.com';
+  document.querySelectorAll('.js-mailto').forEach(function (el) {
+    el.href = 'mailto:' + em;
+  });
+
+  // Scroll reveal — progressive enhancement only
+  // Content is visible without JS; JS adds the fade-in animation
+  document.body.classList.add('js-ready');
+
+  var items = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        setTimeout(function () { e.target.classList.add('visible'); }, 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+
+  items.forEach(function (el) { io.observe(el); });
+
+  // Hero is always above fold — trigger immediately
+  setTimeout(function () {
+    var hero = document.querySelector('.hero .reveal');
+    if (hero) hero.classList.add('visible');
+  }, 100);
+}());
+</script>
+
+</body>
+</html>
